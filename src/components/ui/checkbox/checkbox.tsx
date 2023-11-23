@@ -5,15 +5,17 @@ import {CheckedIcon} from "../../../assets/icons/checked-icon.tsx";
 
 type Props = {
     color: ThemeColors
+    onClick: () => void
 }
 
 
-export const Checkbox = ({color}: Props) => {
+export const Checkbox = ({color, onClick}: Props) => {
     const [checked, setChecked] = useState(true)
 
-    return <div onClick={()=>{
+    return <div onClick={() => {
         setChecked(!checked)
-    }} style={{background: `${color}`}} className={styles.round}>
+        onClick()
+    }} className={`${styles.round} ${styles[color]}`}>
         {checked && (
             <CheckedIcon className={styles.checkedIcon}/>
         )}

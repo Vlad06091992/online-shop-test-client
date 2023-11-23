@@ -1,0 +1,35 @@
+@mixin typography {
+  font-family: Inter;
+}
+
+@mixin heading-styles($color, $size, $weight, $line-height) {
+  color: var(--black, $color);
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+.h1 {
+  @include typography;
+  @include heading-styles(var(--black), 32px, 600, 100%);
+}
+
+.h2 {
+  @include typography;
+  @include heading-styles(var(--black), 20px, 600, 120%);
+}
+
+.h3 {
+  @include typography;
+  @include heading-styles(var(--black, #14161F), 16px, 400, 150%);
+}
+
+.tertiaryButton {
+  @include typography;
+  color: var(--gray-2);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 22.4px */
+}
