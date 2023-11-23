@@ -3,7 +3,7 @@
 }
 
 @mixin heading-styles($color, $size, $weight, $line-height) {
-  color: var(--black, $color);
+  color: $color;
   font-size: $size;
   font-style: normal;
   font-weight: $weight;
@@ -22,14 +22,20 @@
 
 .h3 {
   @include typography;
-  @include heading-styles(var(--black, #14161F), 16px, 400, 150%);
+  @include heading-styles(var(--black), 16px, 400, 150%);
 }
 
 .tertiaryButton {
   @include typography;
-  color: var(--gray-2);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 140%; /* 22.4px */
+  @include heading-styles(var(--gray-2), 16px, 500, 140%);
+}
+
+.secondaryButton {
+  @include typography;
+  @include heading-styles(var(--blue), 16px, 600, 100%);
+}
+
+.primaryButton {
+  @include typography;
+  @include heading-styles(var(--white), 16px, 600, 100%);
 }

@@ -11,6 +11,8 @@ export type TypographyProps<T extends ElementType = 'h1'> = {
         | 'h2'
         | 'h3'
         | 'tertiaryButton'
+        | 'secondaryButton'
+        | 'primaryButton'
     className?: string
 } & ComponentPropsWithoutRef<T>
 export const Typography = <T extends ElementType = 'h1'>({

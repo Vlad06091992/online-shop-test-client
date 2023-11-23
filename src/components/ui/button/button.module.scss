@@ -9,38 +9,16 @@
 
 
 .primary, .primary:visited {
-  background-color: var(--color-accent-500);
-  box-shadow: 0 4px 18px 0 #8C61FF59;
-
-  &:active {
-    background-color: var(--color-accent-700);
-  }
-
-  &:not(:active):hover {
-    background-color: var(--color-accent-300);
-  }
-
-  &:disabled, &:disabled:hover, {
-    background-color: var(--color-accent-900);
-  }
+  padding: 8px 32px;
+  border-radius: 8px;
+  background-color: var(--blue);
 }
 
 
 .secondary {
-  background-color: var(--color-dark-300);
-
-  &:active {
-    background-color: var(--color-dark-500);
-  }
-
-  &:not(:active):hover {
-    background-color: var(--color-dark-100);
-  }
-
-  &:disabled, &:disabled:hover {
-    opacity: 0.5;
-    background-color: var(--color-dark-100);
-  }
+  padding: 8px 32px;
+  border-radius: 8px;
+  border: 1px solid var(--gray);
 }
 
 

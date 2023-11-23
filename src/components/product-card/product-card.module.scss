@@ -1,0 +1,21 @@
+.root{
+  @apply flex gap-8
+}
+
+.image {
+  @apply max-w-[264px] h-auto;
+}
+
+.colors{
+  @apply flex gap-2
+}
+
+.section {
+  min-width: 100px;
+  width: 396px;
+}
+.section3{
+  //display: flex;
+  //flex-wrap: wrap;
+ float: right;
+}

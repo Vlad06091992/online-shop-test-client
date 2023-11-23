@@ -1,0 +1,7 @@
+.sorting{
+  @apply flex gap-3 border-b border-solid border-gray-200 w-full pb-8
+}
+
+.activeSorting{
+  color: var(--blue);
+}
