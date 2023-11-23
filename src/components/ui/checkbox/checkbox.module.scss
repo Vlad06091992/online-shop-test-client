@@ -1,0 +1,29 @@
+.round{
+@apply  flex items-center justify-center w-6 h-6 rounded-full hover:cursor-pointer
+}
+
+
+
+.black {
+  background-color: var(--black);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.purple {
+  background-color: var(--purple);
+}
+
+.gray {
+  background-color: var(--gray);
+}
+
+.white {
+  background-color: var(--white);
+}
