@@ -4,6 +4,7 @@ import {Typography} from "../ui/typography";
 import {ColorItem} from "../../components/color-item/color-item.tsx";
 import {Button} from "../../components/ui/button/button.tsx";
 import {getPriceToViewModel} from "../../utils/getPriceToViewModel.ts";
+import {Link} from "react-router-dom";
 
 
 export const ProductCard = ({colors, desc, id, name, popularity, image, price}: ProductType) => {
@@ -16,12 +17,12 @@ export const ProductCard = ({colors, desc, id, name, popularity, image, price}: 
                 <div>
             <Typography as={'h2'} variant={'h2'}>{name}</Typography>
             <div className={styles.colors}>{
-                colors.map(el => <ColorItem color={el}/>)
+                colors.map(el => <ColorItem key={el} color={el}/>)
             }</div>
                 </div>
                 <div>
             <Button variant={'secondary'}>
-                <Typography as={'span'} variant={'secondaryButton'}>
+                <Typography as={Link} to={`../product/${id}`} variant={'secondaryButton'}>
                     Подробнее
                 </Typography>
             </Button>
