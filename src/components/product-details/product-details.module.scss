@@ -1,7 +1,5 @@
 .root {
-  //justify-content: space-between;
-  width: 100%;
-  @apply flex gap-10
+  @apply flex gap-10 w-full px-6
 }
 
 .image {
@@ -12,6 +10,9 @@
   @apply flex gap-2 mt-4
 }
 
+.returnButton{
+  @apply mb-8
+}
 
 
 .basket_price {
@@ -30,4 +31,8 @@
 
 .description{
   margin-top: 40px;
+}
+
+.header{
+  @apply mb-4
 }

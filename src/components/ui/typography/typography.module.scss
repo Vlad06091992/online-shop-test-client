@@ -39,3 +39,9 @@
   @include typography;
   @include heading-styles(var(--white), 16px, 600, 100%);
 }
+
+.textDescription{
+  @include typography;
+  @include heading-styles(var(--black), 16px, 400, 150%);
+  font-family: Inter;
+}

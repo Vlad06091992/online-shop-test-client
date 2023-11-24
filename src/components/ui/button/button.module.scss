@@ -5,6 +5,9 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  &:hover{
+    filter: brightness(1.2)
+  }
 }
 
 
@@ -24,9 +27,6 @@
 
 .tertiary {
   color: var(--gray-2);
- &:hover{
-   filter: brightness(1.2)
- }
 }
 
 
