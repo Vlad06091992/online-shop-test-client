@@ -17,7 +17,7 @@ export const Checkbox = ({color, onClick}: Props) => {
         onClick()
     }} className={`${styles.round} ${styles[color]}`}>
         {checked && (
-            <CheckedIcon className={styles.checkedIcon}/>
+            <CheckedIcon color={color} className={styles.checkedIcon}/>
         )}
     </div>
 }
