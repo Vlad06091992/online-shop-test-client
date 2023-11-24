@@ -1,5 +1,5 @@
 import {SVGProps, Ref, forwardRef} from "react";
-import {ThemeColors} from "src/types.ts";
+import {ThemeColors} from "../../types.ts";
 
 type Props = {
     color?: ThemeColors

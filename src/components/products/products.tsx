@@ -66,8 +66,7 @@ export const Products = () => {
     return (<div className={styles.productsContainer}>
         <Options/>
         <div className={styles.products}>
-            {cardData.map(el=> <ProductCard {...el}/>)}
-            {/*<ProductCard {...cardData}/>*/}
+            {cardData.map(el=> < ProductCard key={el.id} {...el}/>)}
         </div>
     </div>)
 }

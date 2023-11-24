@@ -1,0 +1,33 @@
+.root {
+  //justify-content: space-between;
+  width: 100%;
+  @apply flex gap-10
+}
+
+.image {
+  @apply min-w-[30%] h-auto;
+}
+
+.colors {
+  @apply flex gap-2 mt-4
+}
+
+
+
+.basket_price {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: end;
+  right: 0;
+}
+
+.productInfo{
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.description{
+  margin-top: 40px;
+}
