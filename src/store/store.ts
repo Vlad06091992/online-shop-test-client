@@ -4,6 +4,11 @@ import {instance} from "../api/api.ts";
 
 class DataStore {
     products: ProductType[] = []
+    querySearchParams ={
+        // colorFilters : ["black", "blue", "green"],
+        // sortingField:  'price',
+        sortingOption:  'asc',
+    }
     productsInBasket:ProductType[]  = []
     currentProduct:ProductType | null = null
     colorFilters: ThemeColors[] = ["black", "blue", "green"]
@@ -13,17 +18,21 @@ class DataStore {
 
     constructor() {
         makeObservable(this, {
+            querySearchParams:observable,
             colorFilters: observable,
             products:observable,
             currentProduct:observable,
             sortingField: observable,
             productsInBasket:observable,
             sortingOption: observable,
+            setQuerySearchParams:action,
             getProducts: action,
             getProductById:action,
             addProductInBasket:action,
         });
     }
+
+    setQuerySearchParams(){}
 
     addProductInBasket(product: ProductType) {
         this.productsInBasket.push(product)
