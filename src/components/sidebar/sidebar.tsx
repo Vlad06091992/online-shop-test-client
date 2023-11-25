@@ -21,13 +21,12 @@ export const Sidebar = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     useEffect(() => {
         setSearchParams((params) => {
+            if(colors.length > 0)
             params.set("colors", colors.join())
             return params
         })
     }, [colors, setSearchParams]);
 
-    console.log(colors)
-    // const [searchParams, setSearchParams] = useSearchParams();
     return (<div className={styles.root}>
         <Typography className={styles.titleH1} as={'h1'}>Смартфоны</Typography>
         <Typography className={styles.titleH2} variant={'h2'} as={'h2'}>Цвет</Typography>
@@ -41,8 +40,13 @@ export const Sidebar = () => {
             }} key={el.color} color={el.color} title={el.title}/>)}
         </div>
         <Button className={styles.resetButton} onClick={() => {
-            setColors([])
-            console.log('reset')
+
+            setSearchParams((params) => {
+                setColors([])
+
+                params.delete("colors")
+                return params
+            })
         }} variant={'tertiary'}>
             <Typography as={'span'} variant={'tertiaryButton'}>
                 Сбросить параметры
