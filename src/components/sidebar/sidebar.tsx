@@ -41,6 +41,7 @@ export const Sidebar = () => {
             }} key={el.color} color={el.color} title={el.title}/>)}
         </div>
         <Button className={styles.resetButton} onClick={() => {
+            setColors([])
             console.log('reset')
         }} variant={'tertiary'}>
             <Typography as={'span'} variant={'tertiaryButton'}>
