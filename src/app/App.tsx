@@ -1,4 +1,4 @@
-import {Outlet, useSearchParams} from "react-router-dom";
+import {Outlet, useLocation, useNavigate, useSearchParams} from "react-router-dom";
 import {Header} from "../components/header/Header.tsx";
 import {observer} from "mobx-react";
 import {useEffect} from "react";
@@ -6,16 +6,10 @@ import {store} from "../store/store.ts";
 
 
 export const App = observer(() => {
-
-    const [searchParams, setSearchParams] = useSearchParams();
-    console.log(searchParams.entries())
-
+    const {search} = useLocation()
     useEffect(() => {
-        // debugger
-        store.getProducts()
-    }, [])
-
-
+        store.getProducts(search)
+    }, [search])
 
     return (<div>
         <Header/>

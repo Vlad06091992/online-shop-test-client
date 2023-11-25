@@ -33,7 +33,6 @@ export const Options = () => {
         })
     }, [sortField, setSearchParams])
 
-console.log(searchParams.entries())
 
     return (
         <div>
@@ -61,11 +60,8 @@ console.log(searchParams.entries())
                     </Typography>
                     <div className={`${sortField === 'price' ? styles.activeSorting : ''}`} onClick={
                         () => {
-                            console.log(sortingOrder)
                             setSortingOrder((arg) => arg === "asc" ? 'desc' : 'asc')
-
                         }
-
                     }>
                         {sortingOrder === 'asc' && <AscSortIcon isActive={sortField === 'price'}/>}
                         {sortingOrder === 'desc' && < DescSortIcon isActive={sortField === 'price'}/>}

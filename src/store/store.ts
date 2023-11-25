@@ -38,14 +38,13 @@ class DataStore {
         this.productsInBasket.push(product)
     }
 
-   async getProductById(productId: number) {
+    async getProductById(productId: number) {
         const product = await instance.get(`./product/${productId}`)
         this.currentProduct = product.data
-        console.log(this.products)
     }
 
-    async getProducts() {
-        const products = await instance.get('./products')
+    async getProducts(search:string) {
+        const products = await instance.get(`./products/${search}`)
         this.products = products.data
     }
 
