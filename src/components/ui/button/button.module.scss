@@ -11,7 +11,7 @@
 }
 
 
-.primary, .primary:visited {
+.primary {
   padding: 8px 32px;
   border-radius: 8px;
   background-color: var(--blue);
@@ -22,6 +22,9 @@
   padding: 8px 32px;
   border-radius: 8px;
   border: 1px solid var(--gray);
+  &:hover{
+    border-color: #A3A7BF;
+  }
 }
 
 
@@ -30,30 +33,7 @@
 }
 
 
-.link, .link:visited {
-  display: inline-block;
 
-  padding: 6px 16px;
-
-  font-size: var(--font-size-m);
-  color: var(--color-accent-500);
-  text-decoration: none;
-
-  &:active, &:active:visited {
-    color: var(--color-accent-700);
-  }
-
-;
-
-  &:focus {
-    border-radvius: 20px;
-  }
-
-  &:hover {
-    color: var(--color-accent-300);
-  }
-
-}
 
 
 

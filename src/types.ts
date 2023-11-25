@@ -14,3 +14,6 @@ export type ProductType = {
     popularity: number;
     desc: string;
 };
+
+export type SortingOptionType = 'asc' | 'desc'
+export type SortingFieldType = 'price' | 'popularity'

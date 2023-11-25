@@ -4,13 +4,13 @@ import styles from "./options.module.scss";
 import AscSortIcon from "../../assets/icons/asc-sort-icon.tsx";
 import DescSortIcon from "../../assets/icons/desc-sort-icon.tsx";
 import {useState} from "react";
+import {SortingOptionType,SortingFieldType} from "../../types.ts";
 
-type Sorting = 'asc' | 'desc'
-type SortingBy = 'price' | 'popularity'
+
 
 export const Options = () => {
-    const [sort, setSorting] = useState<Sorting>('asc')
-    const [sortType, setSortingType] = useState<SortingBy>('price')
+    const [sort, setSorting] = useState<SortingOptionType>('asc')
+    const [sortType, setSortingType] = useState<SortingFieldType>('price')
     return (
         <div>
             <div className={styles.sorting}>

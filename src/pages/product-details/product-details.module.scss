@@ -6,6 +6,10 @@
   @apply flex gap-10 w-full px-6
 }
 
+.downButton{
+  @apply flex gap-2
+}
+
 .image {
   @apply min-w-[30%] h-auto;
 }

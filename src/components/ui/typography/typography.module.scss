@@ -25,17 +25,17 @@
   @include heading-styles(var(--black), 16px, 400, 150%);
 }
 
-.tertiaryButton {
+.tertiaryButton, .tertiaryButton:visited {
   @include typography;
   @include heading-styles(var(--gray-2), 16px, 500, 140%);
 }
 
-.secondaryButton {
+.secondaryButton, .secondaryButton:visited {
   @include typography;
   @include heading-styles(var(--blue), 16px, 600, 100%);
 }
 
-.primaryButton {
+.primaryButton, .primaryButton:visited {
   @include typography;
   @include heading-styles(var(--white), 16px, 600, 100%);
 }

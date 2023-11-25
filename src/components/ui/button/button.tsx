@@ -13,18 +13,14 @@ export type ButtonProps<T extends ElementType = 'button'> = {
 export const Button = <T extends ElementType = 'button'>(
     {
         variant = 'primary',
-        fullWidth,
         className,
         as,
-        disabledLink,
         ...rest
     }: ButtonProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>) => {
     const Component = as || 'button'
     return (
         <Component
-            className={`${s[variant]} ${disabledLink ? s.disabledLink : ''} ${
-                fullWidth ? s.fullwidth : ''
-            } ${s.button} ${className}`}
+            className={`${s[variant]}  ${s.button} ${className}`}
             {...rest}
         />
     )
