@@ -8,8 +8,12 @@ import {store} from "../store/store.ts";
 export const App = observer(() => {
 
     useEffect(() => {
+        // debugger
         store.getProducts()
     }, [])
+
+
+
     return (<div>
         <Header/>
         <Outlet/>

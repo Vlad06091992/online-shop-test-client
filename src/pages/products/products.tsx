@@ -7,6 +7,9 @@ import {store} from "../../store/store.ts";
 
 
 export const Products = observer(() => {
+
+    console.log(store.products)
+
     return (
         <div className={styles.products}>
             <Sidebar/>

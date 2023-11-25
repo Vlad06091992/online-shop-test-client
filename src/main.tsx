@@ -26,10 +26,13 @@ const RootComponent = observer(() => {
     },
 ])
 
+
+
+
     return (
-        <React.StrictMode>
+        // <React.StrictMode>
             <RouterProvider router={router}/>
-         </React.StrictMode>
+         // </React.StrictMode>
     );
 });
 
