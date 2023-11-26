@@ -4,15 +4,14 @@ import styles from "./options.module.scss";
 import AscSortIcon from "../../assets/icons/asc-sort-icon.tsx";
 import DescSortIcon from "../../assets/icons/desc-sort-icon.tsx";
 import {useEffect, useState} from "react";
-import {SortingOptionType, SortingFieldType} from "../../types.ts";
+import {SortingFieldType, SortingOptionType} from "../../types.ts";
 import {useSearchParams} from "react-router-dom";
-import {store} from "../../store/store.ts";
 
 
 export const Options = () => {
     const [sortingOrder, setSortingOrder] = useState<SortingOptionType>('asc')
     const [sortField, setSortingField] = useState<SortingFieldType>('price')
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [, setSearchParams] = useSearchParams();
 
     useEffect(() => {
         setSearchParams((params) => {
@@ -66,10 +65,8 @@ export const Options = () => {
                         {sortingOrder === 'asc' && <AscSortIcon isActive={sortField === 'price'}/>}
                         {sortingOrder === 'desc' && < DescSortIcon isActive={sortField === 'price'}/>}
                     </div>
-
                 </Button>
             </div>
-
         </div>
     )
 }

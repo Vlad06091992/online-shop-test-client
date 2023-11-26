@@ -36,8 +36,7 @@ export const ProductCard = observer((product: ProductType) => {
                <Typography className={styles.price} as={'div'} variant={'h2'}>
                     {getPriceToViewModel(product.price)} ₽
                 </Typography>
-
-            <Button onClick={()=>{
+               <Button onClick={()=>{
                 store.addProductInBasket(product)
             }} variant={'primary'}>
                 <Typography as={'div'} variant={'primaryButton'}>
@@ -45,7 +44,6 @@ export const ProductCard = observer((product: ProductType) => {
             </Button>
            </div>
         </div>
-
     </div>
 )}
 )

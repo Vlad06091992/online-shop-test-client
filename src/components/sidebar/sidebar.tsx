@@ -2,10 +2,9 @@ import {Typography} from "../../components/ui/typography";
 import {ColorOption} from "../../components/color-option/color-option.tsx";
 import styles from "./sidebar.module.scss"
 import {Button} from "../../components/ui/button/button.tsx";
-import {ColorOptionsType} from "../../types.ts";
+import {ColorOptionsType, ThemeColors} from "../../types.ts";
 import {useSearchParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {set} from "mobx";
 
 
 const colorOptions: ColorOptionsType = [
@@ -17,12 +16,15 @@ const colorOptions: ColorOptionsType = [
 ]
 
 export const Sidebar = () => {
-    const [colors, setColors] = useState<any>([])
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [colors, setColors] = useState<ThemeColors[]>([])
+    const [, setSearchParams] = useSearchParams();
     useEffect(() => {
         setSearchParams((params) => {
-            if(colors.length > 0)
-            params.set("colors", colors.join())
+            if (colors.length > 0) {
+                params.set("colors", colors.join())
+            } else {
+                params.delete("colors")
+            }
             return params
         })
     }, [colors, setSearchParams]);
@@ -43,7 +45,6 @@ export const Sidebar = () => {
 
             setSearchParams((params) => {
                 setColors([])
-
                 params.delete("colors")
                 return params
             })
