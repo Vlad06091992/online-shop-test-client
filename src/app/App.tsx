@@ -9,7 +9,7 @@ export const App = observer(() => {
 
     useEffect(() => {
         navigate('./products')
-    }, []);
+    }, [navigate]);
 
     return (<div>
         <Header/>
