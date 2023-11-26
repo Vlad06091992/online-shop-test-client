@@ -4,33 +4,33 @@ import styles from "./options.module.scss";
 import AscSortIcon from "../../assets/icons/asc-sort-icon.tsx";
 import DescSortIcon from "../../assets/icons/desc-sort-icon.tsx";
 import {useEffect, useState} from "react";
-import {SortingFieldType, SortingOptionType} from "../../types.ts";
+import {SortOrderType,SortByType} from "../../types.ts";
 import {useSearchParams} from "react-router-dom";
 
 
 export const Options = () => {
-    const [sortingOrder, setSortingOrder] = useState<SortingOptionType>('asc')
-    const [sortField, setSortingField] = useState<SortingFieldType>('price')
+    const [sortOrder, setSortOrder] = useState<SortOrderType>('asc')
+    const [sortBy, setSortingField] = useState<SortByType>('price')
     const [, setSearchParams] = useSearchParams();
 
     useEffect(() => {
         setSearchParams((params) => {
-            params.set("sortingOption", sortingOrder)
+            params.set("sortOrder", sortOrder)
             return params
         })
-    }, [sortingOrder, setSearchParams]);
+    }, [sortOrder, setSearchParams]);
 
 
     useEffect(() => {
         setSearchParams((params) => {
-            const field = params.get('sortField')
+            const field = params.get('sortBy')
             if (field === "popularity") {
-                params.delete("sortingOption")
+                params.delete("sortOrder")
             }
-            params.set("sortField", sortField)
+            params.set("sortBy", sortBy)
             return params
         })
-    }, [sortField, setSearchParams])
+    }, [sortBy, setSearchParams])
 
 
     return (
@@ -39,12 +39,12 @@ export const Options = () => {
                 <Button onClick={() => {
                     setSortingField('popularity')
                     setSearchParams((params) => {
-                        params.set("sortField", 'popularity')
+                        params.set("sortBy", 'popularity')
                         return params
                     })
                 }} variant={'tertiary'}>
                     {/*${disabledLink ? s.disabledLink : ''}*/}
-                    <Typography className={`${sortField === 'popularity' ? styles.activeSorting : ''}`} as={'span'}
+                    <Typography className={`${sortBy === 'popularity' ? styles.activeSorting : ''}`} as={'span'}
                                 variant={'tertiaryButton'}>
                         по популярности
                     </Typography>
@@ -53,17 +53,17 @@ export const Options = () => {
                     setSortingField('price')
 
                 }} variant={'tertiary'}>
-                    <Typography className={`${sortField === 'price' ? styles.activeSorting : ''}`} as={'span'}
+                    <Typography className={`${sortBy === 'price' ? styles.activeSorting : ''}`} as={'span'}
                                 variant={'tertiaryButton'}>
                         по цене
                     </Typography>
-                    <div className={`${sortField === 'price' ? styles.activeSorting : ''}`} onClick={
+                    <div className={`${sortBy === 'price' ? styles.activeSorting : ''}`} onClick={
                         () => {
-                            setSortingOrder((arg) => arg === "asc" ? 'desc' : 'asc')
+                            setSortOrder((arg) => arg === "asc" ? 'desc' : 'asc')
                         }
                     }>
-                        {sortingOrder === 'asc' && <AscSortIcon isActive={sortField === 'price'}/>}
-                        {sortingOrder === 'desc' && < DescSortIcon isActive={sortField === 'price'}/>}
+                        {sortOrder === 'asc' && <AscSortIcon isActive={sortBy === 'price'}/>}
+                        {sortOrder === 'desc' && < DescSortIcon isActive={sortBy === 'price'}/>}
                     </div>
                 </Button>
             </div>
