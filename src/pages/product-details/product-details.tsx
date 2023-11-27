@@ -9,10 +9,11 @@ import {Link, useParams} from "react-router-dom";
 import {observer} from "mobx-react";
 import {store} from "../../store/store.ts";
 import {useEffect} from "react";
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const ProductDetails = observer(() => {
-
     const {productId} = useParams()
 
     useEffect(() => {
@@ -20,6 +21,7 @@ export const ProductDetails = observer(() => {
     }, [])
 
     const product = store.currentProduct
+    const notify = () => toast(`${product?.name} добавлен в корзину !`);
 
     if (!product) {
         return <div>loading...</div>
@@ -29,6 +31,7 @@ export const ProductDetails = observer(() => {
 
     return (
         <div className={styles.container}>
+            <ToastContainer autoClose={1500} position="top-center" theme={'colored'} />
             <Button onClick={() => {
             }} className={styles.returnButton} variant={'tertiary'}>
                 <Typography as={Link} to={'../products'} variant={'tertiaryButton'}>
@@ -53,6 +56,7 @@ export const ProductDetails = observer(() => {
                     </Typography>
 
                     <Button onClick={()=>{
+                        notify()
                         store.addProductInBasket(product)
                     }} variant={'primary'}>
                         <Typography as={'div'} variant={'primaryButton'}>

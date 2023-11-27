@@ -1,27 +1,20 @@
 .button {
-  padding: 0.5rem 2rem;
-  cursor:pointer;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  &:hover{
-    filter: brightness(1.2)
-  }
-  @media (max-width: 890px) {
-    padding: 0.5rem 0.5rem;
-  }
+  @apply py-2 px-8 cursor-pointer flex gap-2.5 items-center justify-center hover:brightness-110 rounded-lg
+}
+
+@media (max-width: 920px) {
+ .button {
+   @apply p-1.5
+ }
 }
 
 
 .primary {
-  border-radius: 8px;
   background-color: var(--blue);
 }
 
 
 .secondary {
-  border-radius: 8px;
   border: 1px solid var(--gray);
   &:hover{
     border-color: #A3A7BF;

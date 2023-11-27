@@ -7,9 +7,11 @@ import {useEffect} from "react";
 export const App = observer(() => {
     const navigate = useNavigate()
 
+
     useEffect(() => {
         navigate('./products')
     }, [navigate]);
+
 
     return (<div>
         <Header/>
