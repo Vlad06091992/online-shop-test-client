@@ -16,16 +16,24 @@ import 'react-toastify/dist/ReactToastify.css';
 export const ProductDetails = observer(() => {
     const {productId} = useParams()
 
-    useEffect(() => {
-        store.getProductById(+productId!)
-    }, [])
+debugger
 
-    const product = store.currentProduct
-    const notify = () => toast(`${product?.name} добавлен в корзину !`);
+    useEffect(() => {
+        debugger
+        store.getProductById(+productId!)
+    }, [productId])
+
+    const product = store.currentProduct!
 
     if (!product) {
         return <div>loading...</div>
     }
+
+    const productsInBasket = store.productsInBasket
+    const isInBasket = productsInBasket.some(el=>el.id === product.id)
+    const notify = (name: string) => toast(`${name} ${isInBasket ? "удален из корзины" : "добавлен в корзину" !}`);
+
+
 
     const {part1, part2} = splitDescription(product.desc)
 
@@ -55,12 +63,12 @@ export const ProductDetails = observer(() => {
                         {getPriceToViewModel(product.price)} ₽
                     </Typography>
 
-                    <Button onClick={()=>{
-                        notify()
-                        store.addProductInBasket(product)
+                    <Button onClick={() => {
+                        notify(product.name)
+                        isInBasket ? store.deleteProductInBasket(product) :  store.addProductInBasket(product)
                     }} variant={'primary'}>
                         <Typography as={'div'} variant={'primaryButton'}>
-                            В корзину</Typography>
+                            {isInBasket ? "Удалить " : "В корзину"}</Typography>
                     </Button>
                 </div>
             </div>
