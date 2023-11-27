@@ -1,4 +1,4 @@
-import {action, makeObservable, observable} from "mobx";
+import {action, autorun, makeObservable, observable} from "mobx";
 import {ProductType} from "../types.ts";
 import {instance} from "../api/api.ts";
 
@@ -17,6 +17,14 @@ class DataStore {
             addProductInBasket: action,
             deleteProductInBasket: action,
         });
+        this.getProductsInBasketFromLocaleStorage()
+    }
+
+    getProductsInBasketFromLocaleStorage() {
+        const savedValue = localStorage.getItem("productsInBasket");
+        if (savedValue) {
+            this.productsInBasket = JSON.parse(savedValue);
+        }
     }
 
     addProductInBasket(product: ProductType) {
@@ -41,4 +49,6 @@ class DataStore {
 
 export const store = new DataStore();
 
-
+autorun(() => {
+    localStorage.setItem("productsInBasket", JSON.stringify(store.productsInBasket));
+});
