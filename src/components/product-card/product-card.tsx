@@ -12,7 +12,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export const ProductCard = observer((product: ProductType) => {
-        const notify = (name: string) => toast(`${name} добавлен в корзину !`);
+
+    const productsInBasket = store.productsInBasket
+    const isInBasket = productsInBasket.some(el=>el.id === product.id)
+
+        const notify = (name: string) => toast(`${name} ${isInBasket ? "удален из корзины" : "добавлен в корзину" !}`);
 
         return (<div className={styles.root}>
                 <ToastContainer autoClose={1500} position="top-center" theme={'colored'}/>
@@ -43,10 +47,10 @@ export const ProductCard = observer((product: ProductType) => {
                         </Typography>
                         <Button onClick={() => {
                             notify(product.name)
-                            store.addProductInBasket(product)
+                            isInBasket ? store.deleteProductInBasket(product) :  store.addProductInBasket(product)
                         }} variant={'primary'}>
                             <Typography as={'div'} variant={'primaryButton'}>
-                                В корзину</Typography>
+                                {isInBasket ? "Удалить " : "В корзину"}</Typography>
                         </Button>
                     </div>
                 </div>
