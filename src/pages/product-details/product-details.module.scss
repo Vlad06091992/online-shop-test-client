@@ -6,6 +6,21 @@
   @apply flex gap-10 w-full px-6
 }
 
+@media (max-width: 767px) {
+  .root {
+    @apply block mx-auto
+  }
+
+  img{
+    @apply mx-auto
+  }
+
+  .description{
+    @apply mt-5
+  }
+
+}
+
 .downButton{
   @apply flex gap-2
 }
@@ -32,7 +47,7 @@
 }
 
 .description{
-  @apply mt-40
+  @apply mt-10
 }
 
 .header{

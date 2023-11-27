@@ -3,6 +3,16 @@ html {
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1280px) {
+    font-size: 80%;
+
+  }
+
+  @media (max-width: 768px) {
+    font-size: 60%;
+
+  }
 }
 
 
@@ -34,4 +44,6 @@ body {
   padding: 0;
   width: 100%;
   max-width: 1600px;
+  font-family: Inter, sans-serif;
 }
+

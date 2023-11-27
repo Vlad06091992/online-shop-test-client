@@ -1,6 +1,4 @@
-@mixin typography {
-  font-family: Inter;
-}
+
 
 @mixin heading-styles($color, $size, $weight, $line-height) {
   color: $color;
@@ -11,37 +9,29 @@
 }
 
 .h1 {
-  @include typography;
-  @include heading-styles(var(--black), 32px, 600, 100%);
+  @include heading-styles(var(--black), 2rem, 600, 100%);
 }
 
 .h2 {
-  @include typography;
-  @include heading-styles(var(--black), 20px, 600, 120%);
+  @include heading-styles(var(--black), 1.25rem, 600, 120%);
 }
 
 .h3 {
-  @include typography;
-  @include heading-styles(var(--black), 16px, 400, 150%);
+  @include heading-styles(var(--black), 1rem, 400, 150%);
 }
 
 .tertiaryButton, .tertiaryButton:visited {
-  @include typography;
-  @include heading-styles(var(--gray-2), 16px, 500, 140%);
+  @include heading-styles(var(--gray-2), 1rem, 500, 140%);
 }
 
 .secondaryButton, .secondaryButton:visited {
-  @include typography;
-  @include heading-styles(var(--blue), 16px, 600, 100%);
+  @include heading-styles(var(--blue), 1rem, 600, 100%);
 }
 
 .primaryButton, .primaryButton:visited {
-  @include typography;
-  @include heading-styles(var(--white), 16px, 600, 100%);
+  @include heading-styles(var(--white), 1rem, 600, 100%);
 }
 
 .textDescription{
-  @include typography;
-  @include heading-styles(var(--black), 16px, 400, 150%);
-  font-family: Inter;
+  @include heading-styles(var(--black), 1rem, 400, 150%);
 }

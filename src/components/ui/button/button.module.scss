@@ -1,6 +1,6 @@
 .button {
+  padding: 0.5rem 2rem;
   cursor:pointer;
-
   display: flex;
   gap: 10px;
   align-items: center;
@@ -8,18 +8,19 @@
   &:hover{
     filter: brightness(1.2)
   }
+  @media (max-width: 890px) {
+    padding: 0.5rem 0.5rem;
+  }
 }
 
 
 .primary {
-  padding: 8px 32px;
   border-radius: 8px;
   background-color: var(--blue);
 }
 
 
 .secondary {
-  padding: 8px 32px;
   border-radius: 8px;
   border: 1px solid var(--gray);
   &:hover{

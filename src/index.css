@@ -4,7 +4,4 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
-}
+
