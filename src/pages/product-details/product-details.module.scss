@@ -24,21 +24,15 @@
 
 
 .basket_price {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: end;
-  right: 0;
+  @apply flex flex-col gap-4 items-end right-0
 }
 
 .productInfo{
-  display: flex;
-  justify-content: space-between;
-  max-width: 100%;
+  @apply flex-col justify-between max-w-full
 }
 
 .description{
-  margin-top: 40px;
+  @apply mt-40
 }
 
 .header{
