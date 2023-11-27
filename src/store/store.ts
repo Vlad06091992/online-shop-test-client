@@ -37,7 +37,6 @@ class DataStore {
     }
 
     async getProductById(productId: number) {
-        debugger
         const product = await instance.get(`./product/${productId}`)
         this.currentProduct = product.data
     }

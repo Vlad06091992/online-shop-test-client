@@ -16,10 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export const ProductDetails = observer(() => {
     const {productId} = useParams()
 
-debugger
-
     useEffect(() => {
-        debugger
         store.getProductById(+productId!)
     }, [productId])
 
