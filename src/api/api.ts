@@ -1,4 +1,5 @@
 import axios from 'axios'
 export const instance = axios.create({
-    baseURL: 'http://localhost:7542/',
+    baseURL: 'https://online-shop-test-server-dcrd-d149oteic-vlad06091992.vercel.app/',
+    withCredentials:true,
 })

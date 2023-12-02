@@ -6,7 +6,6 @@ import './styles/index.scss'
 import {Products} from "./pages/products/products.tsx";
 import {ProductDetails} from "./pages/product-details/product-details.tsx";
 import {observer} from "mobx-react";
-import React from "react";
 
 
 const RootComponent = observer(() => {

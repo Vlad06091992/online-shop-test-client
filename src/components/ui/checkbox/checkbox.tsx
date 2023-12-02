@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {ThemeColors} from "../../../types.ts";
 import styles from "./checkbox.module.scss"
 import {CheckedIcon} from "../../../assets/icons/checked-icon.tsx";
